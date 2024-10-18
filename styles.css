@@ -1,0 +1,440 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes fondoDinámico {
+    0% { background-color: #9b59b6; } /* Morado */
+    25% { background-color: #3498db; } /* Azul */
+    50% { background-color: #5dade2; } /* Celeste */
+    75% { background-color: #85c1ae; } /* Verde agua */
+    100% { background-color: #9b59b6; } /* Regresar a Morado */
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar todo el contenido */
+    justify-content: center; /* Centrar verticalmente */
+    min-height: 100vh; /* Asegura que el body ocupe al menos la altura completa de la ventana */
+    animation: fondoDinámico 10s infinite; /* Aplicar animación */
+    margin: 0; /* Eliminar márgenes por defecto */
+}
+
+
+header {
+    width: 100%;
+    background-color: #2980b9;
+    color: #ffffff;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ecf0f1;
+}
+
+.hero {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ajustar ancho */
+}
+
+.carousel {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.carousel-control {
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+    border: none;
+    color: #333; /* Color de la flecha */
+    font-size: 30px; /* Tamaño de la flecha */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%; /* Hacer las flechas redondas */
+    transition: background-color 0.3s;
+}
+
+.carousel-control:hover {
+    background-color: rgba(255, 255, 255, 1); /* Fondo al pasar el mouse */
+}
+
+.prev {
+    left: 10px; /* Ajustar posición izquierda */
+}
+
+.next {
+    right: 10px; /* Ajustar posición derecha */
+}
+
+
+.hero-content {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.cta {
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.cta:hover {
+    background-color: #c0392b;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas fijas */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; /* Ancho máximo para centrado */
+    margin: 0 auto; /* Centrar la cuadrícula */
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #e74c3c; /* Color del precio */
+}
+
+.description {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #666; /* Color de la descripción */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre botones */
+}
+
+.cta {
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.cta:hover {
+    background-color: #c0392b;
+}
+
+.cta.secondary {
+    background-color: #2980b9; /* Color diferente para el botón secundario */
+}
+
+.cta.secondary:hover {
+    background-color: #1c598a; /* Hover para el botón secundario */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}
+
+
+/* Centrar la sección Sobre Nosotros */
+.sobre-nosotros {
+    background-color: #f9f9f9; /* Fondo suave */
+    padding: 40px; /* Espaciado */
+    border-radius: 10px;
+    margin: 20px auto; /* Centrar la sección */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    max-width: 1200px; /* Ancho máximo */
+}
+
+.sobre-nosotros h2 {
+    font-size: 32px; /* Título más grande */
+    margin-bottom: 20px;
+    color: #2980b9; /* Color atractivo */
+    text-align: center; /* Centrar título */
+}
+
+.sobre-contenido {
+    display: flex; /* Flexbox para dividir en columnas */
+    justify-content: space-between; /* Espaciado entre columnas */
+    align-items: center; /* Alinear verticalmente */
+}
+
+.texto-sobre-nosotros {
+    flex: 1; /* Toma el espacio restante */
+    margin-right: 20px; /* Espacio entre texto e imagen */
+}
+
+.texto-sobre-nosotros p {
+    font-size: 18px; /* Tamaño de fuente mayor */
+    margin-bottom: 15px; /* Espaciado entre párrafos */
+    color: #333; /* Color de texto oscuro */
+}
+
+.texto-sobre-nosotros strong {
+    color: #e74c3c; /* Color para texto destacado */
+}
+
+.imagen-sobre-nosotros {
+    flex: 1; /* Toma el espacio restante */
+}
+
+.imagen-sobre-nosotros img {
+    max-width: 100%; /* Asegura que la imagen no sobrepase el contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para la imagen */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 900px) {
+    .sobre-contenido {
+        flex-direction: column; /* Cambiar a columnas en pantallas pequeñas */
+        align-items: center; /* Centrar contenido */
+    }
+
+    .texto-sobre-nosotros {
+        margin-right: 0; /* Quitar margen en pantallas pequeñas */
+        margin-bottom: 20px; /* Espacio inferior */
+    }
+}
+
+@media (max-width: 600px) {
+    .sobre-nosotros {
+        padding: 30px 15px; /* Ajustar padding en pantallas pequeñas */
+    }
+
+    .sobre-nosotros h2 {
+        font-size: 28px; /* Tamaño de título menor en móviles */
+    }
+
+    .texto-sobre-nosotros p {
+        font-size: 16px; /* Tamaño de fuente menor en móviles */
+    }
+}
+
+
+
+
+footer {
+    background-color: #2980b9;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%; /* Asegura que el pie de página ocupe todo el ancho */
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .product-card {
+        padding: 10px; /* Ajustar el padding en pantallas pequeñas */
+    }
+
+    .sobre-nosotros {
+        padding: 15px; /* Ajustar el padding en pantallas pequeñas */
+    }
+}
+
+/* Mejora de colores y contrastes */
+.hero-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Mejora la legibilidad */
+}
+
+/* Animaciones para las tarjetas de productos */
+.product-card {
+    transition: transform 0.3s, box-shadow 0.3s; /* Añadir animación de sombra */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Añadir sombra al hover */
+}
+nav {
+    position: relative;
+    background-color: #2980b9; /* Fondo del nav */
+}
+
+.menu-toggle {
+    display: none; /* Ocultar por defecto */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex; /* Menú horizontal por defecto */
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Mostrar el botón del menú en pantallas pequeñas */
+    }
+
+    .nav-menu {
+        display: none; /* Ocultar menú por defecto */
+        flex-direction: column; /* Cambiar a vertical */
+        position: absolute; /* Hacer que el menú flote */
+        top: 60px; /* Ajustar según la altura del header */
+        left: 0;
+        width: 100%;
+        background-color: #2980b9; /* Fondo del menú */
+        padding: 15px 0;
+        z-index: 1000; /* Asegurarse de que esté en frente */
+    }
+
+    .nav-menu.active {
+        display: flex; /* Mostrar menú al activarse */
+    }
+
+    .nav-menu li {
+        margin: 10px 0; /* Espacio entre elementos del menú */
+        text-align: center; /* Centrar texto en el menú */
+    }
+}
